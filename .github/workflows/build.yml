@@ -6,6 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: unzip -o "*.zip"
+      - run: sed -i '/ApplicationInfo/d' xposed-stub/src/main/java/de/robv/android/xposed/callbacks/XC_LoadPackage.java
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
